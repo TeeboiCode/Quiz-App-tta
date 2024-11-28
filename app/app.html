@@ -50,6 +50,20 @@
         </div>
       </div>
 
+      <!-- Add this before the quiz starts -->
+      <div class="name-container hidden" id="nameContainer">
+        <form class="player-form" id="playerForm">
+          <h2>Enter Your Full Name</h2>
+          <input
+            type="text"
+            id="playerName"
+            placeholder="Your Full Name"
+            required
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
       <!-- count down -->
       <div class="count-down-container hidden">
         <h1 class="count-down-text" id="countdownText"></h1>
@@ -57,8 +71,8 @@
       </div>
 
       <!-- start button -->
-      <div class="btn-start">
-        <button class="start-btn hidden" id="start_btn">Start Quiz</button>
+      <div class="btn-start hidden" id="btn_start">
+        <button class="start-btn" id="start_btn">Start Quiz</button>
       </div>
 
       <div class="quiz-rules hidden" id="quiz_rules">
@@ -119,7 +133,10 @@
           <p>
             You've completed the Quiz! <br />
             and congrats! 🎉, You got <span class="correct-score"></span> out of
-            <span class="total-question"></span>
+            <span class="total-question"></span> <br /><br />
+            <span id="percentage" style="font-size: 3rem">
+              (<span class="percentage-score"></span>%)
+            </span>
           </p>
           <div class="btn-group">
             <button class="replay-btn">Replay Quiz</button>

@@ -496,9 +496,6 @@ body {
   width: 100%;
   margin: 30px 0 10px;
 }
-.hidden {
-  display: none;
-}
 
 /* memedia query */
 
@@ -567,4 +564,131 @@ body {
 
 /* x-large devices (large desktops, less than 1400px) */
 @media (max-width: 1399.98px) {
+}
+
+.results-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.results-table {
+  margin: 2rem 0;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f5f5f5;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+.name-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: #fff; */
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.2em 2.4em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+  overflow: hidden;
+}
+
+.player-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.player-form h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.player-form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 1.5rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.player-form input:focus {
+  border-color: #0a69ed;
+}
+
+.player-form button {
+  background: #0a69ed;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+  font-weight: 500;
+}
+
+.player-form button:hover {
+  background: #0851bc;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .player-form {
+    margin: 0 1rem;
+    padding: 1.5rem;
+  }
+
+  .player-form h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.hidden {
+  display: none;
 }
