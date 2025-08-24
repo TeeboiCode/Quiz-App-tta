@@ -185,9 +185,233 @@ function startCountDown() {
 // ======================
 
 
+// new
+const quizQuestions = [
+  {
+    id: 1,
+    question: "What is the purpose of the <head> element in an HTML document?",
+    options: [
+      "The <head> element is used to define the main content displayed to users.",
+      "The <head> element holds metadata and links to external resources like CSS and scripts.",
+      "The <head> element creates a visible header section on the page.",
+      "The <head> element defines the footer and page ending metadata."
+    ],
+    correct: "The <head> element holds metadata and links to external resources like CSS and scripts."
+  },
+  {
+    id: 2,
+    question: "Which element should be used to create a clickable link in HTML?",
+    options: [
+      "The <link> element is used to create a hyperlink that users can click.",
+      "The <a> element is used to create a clickable link that navigates to another page.",
+      "The <href> element is used to define a clickable anchor.",
+      "The <button> element is the primary way to create a link to another page."
+    ],
+    correct: "The <a> element is used to create a clickable link that navigates to another page."
+  },
+  {
+    id: 3,
+    question: "Why is the alt attribute important when using an <img> tag?",
+    options: [
+      "It specifies the image resolution in case the image fails to load.",
+      "It links the image to another resource if it doesn't appear.",
+      "It provides alternative text for screen readers and when images cannot load.",
+      "It allows the browser to cache the image more efficiently."
+    ],
+    correct: "It provides alternative text for screen readers and when images cannot load."
+  },
+  {
+    id: 4,
+    question: "What does CSS primarily control in a web page?",
+    options: [
+      "CSS is mainly used to manage user interactions and form validation.",
+      "CSS defines the document structure and content flow.",
+      "CSS is used to style the layout, colors, and fonts of web pages.",
+      "CSS generates dynamic content and handles server requests."
+    ],
+    correct: "CSS is used to style the layout, colors, and fonts of web pages."
+  },
+  {
+    id: 5,
+    question: "Which HTML element is semantically appropriate to group content that could stand alone?",
+    options: [
+      "The <div> element is always the best choice for stand-alone content.",
+      "The <section> element is used for grouping related content that can stand on its own.",
+      "The <span> element is meant for standalone content blocks.",
+      "The <article> element is used to define headings and page layout."
+    ],
+    correct: "The <section> element is used for grouping related content that can stand on its own."
+  },
+  {
+    id: 6,
+    question: "What is the default position of an HTML element with no CSS positioning applied?",
+    options: [
+      "Elements are absolutely positioned by default with no specific offset.",
+      "Elements are relatively positioned to their closest ancestor by default.",
+      "Elements follow static positioning which flows naturally in the document.",
+      "Elements are always fixed unless styled otherwise with CSS."
+    ],
+    correct: "Elements follow static positioning which flows naturally in the document."
+  },
+  {
+    id: 7,
+    question: "How does the class attribute work in HTML?",
+    options: [
+      "It uniquely identifies a single element for CSS styling and JavaScript.",
+      "It applies styles to a group of elements sharing the same class name.",
+      "It only works with internal CSS and not external stylesheets.",
+      "It prevents styles from affecting the tagged element."
+    ],
+    correct: "It applies styles to a group of elements sharing the same class name."
+  },
+  {
+    id: 8,
+    question: "Which unit is relative to the font size of the parent element in CSS?",
+    options: [
+      "The rem unit adjusts based on the height of the viewport.",
+      "The px unit changes depending on the screen resolution.",
+      "The em unit scales based on the font size of its parent element.",
+      "The % unit is based on the global document size only."
+    ],
+    correct: "The em unit scales based on the font size of its parent element."
+  },
+  {
+    id: 9,
+    question: "Why would a developer use an external CSS file?",
+    options: [
+      "To keep styles visible in the HTML file for easier debugging.",
+      "To apply consistent styling across multiple HTML pages efficiently.",
+      "To write JavaScript code in a separate file alongside the styles.",
+      "To reduce the need for using semantic HTML elements."
+    ],
+    correct: "To apply consistent styling across multiple HTML pages efficiently."
+  },
+  {
+    id: 10,
+    question: "What is the difference between id and class in HTML?",
+    options: [
+      "Both id and class can be reused on multiple elements equally.",
+      "An id is used for styling text content only, while class is for layout.",
+      "An id is unique to one element, while a class can be shared by many elements.",
+      "An id creates clickable links, while class helps with list formatting."
+    ],
+    correct: "An id is unique to one element, while a class can be shared by many elements."
+  },
+  {
+    id: 11,
+    question: "What does the display: flex CSS rule do?",
+    options: [
+      "It removes all spacing and hides elements in a flexbox.",
+      "It arranges child elements in a single column by default.",
+      "It enables a flexible layout model for aligning items in rows or columns.",
+      "It makes elements fixed to the viewport dimensions."
+    ],
+    correct: "It enables a flexible layout model for aligning items in rows or columns."
+  },
+  {
+    id: 12,
+    question: "Which CSS property controls the space inside the element but before the border?",
+    options: [
+      "Margin controls the space within the element and its contents.",
+      "Border defines the internal spacing between child elements.",
+      "Padding adds space between the content and the element’s border.",
+      "Spacing adjusts both margin and padding together."
+    ],
+    correct: "Padding adds space between the content and the element’s border."
+  },
+  {
+    id: 13,
+    question: "How does a <form> element function in an HTML page?",
+    options: [
+      "It creates a fixed layout for input fields and labels.",
+      "It structures a list of clickable elements without functionality.",
+      "It defines an area to collect and submit user data to a server.",
+      "It is used only for styling groups of text inputs."
+    ],
+    correct: "It defines an area to collect and submit user data to a server."
+  },
+  {
+    id: 14,
+    question: "Why is it better to use semantic HTML elements like <nav>, <main>, and <footer>?",
+    options: [
+      "They are required for the CSS to render styles correctly.",
+      "They help browsers display content in different screen sizes automatically.",
+      "They provide meaningful structure, improving accessibility and SEO.",
+      "They load content faster because they are HTML5 specific."
+    ],
+    correct: "They provide meaningful structure, improving accessibility and SEO."
+  },
+  {
+    id: 15,
+    question: "What is the effect of setting 'position: absolute' on an HTML element?",
+    options: [
+      "It places the element in the document flow relative to its siblings.",
+      "It makes the element fixed at the top of the page permanently.",
+      "It removes the element from the document flow and positions it relative to its nearest positioned ancestor.",
+      "It ensures the element always stays within the boundaries of its parent."
+    ],
+    correct: "It removes the element from the document flow and positions it relative to its nearest positioned ancestor."
+  },
+  {
+    id: 16,
+    question: "What does the <meta charset='UTF-8'> tag do in HTML?",
+    options: [
+      "It sets the language used in the browser's developer tools.",
+      "It specifies the maximum size of the content in the HTML page.",
+      "It defines the character encoding used to display text correctly.",
+      "It creates automatic translation rules for the browser."
+    ],
+    correct: "It defines the character encoding used to display text correctly."
+  },
+  {
+    id: 17,
+    question: "How does the box model work in CSS?",
+    options: [
+      "It represents HTML elements as layers of text and data.",
+      "It defines how height and width affect only the content area.",
+      "It shows how content, padding, border, and margin make up an element’s total size.",
+      "It describes the relationship between display properties and animation effects."
+    ],
+    correct: "It shows how content, padding, border, and margin make up an element’s total size."
+  },
+  {
+    id: 18,
+    question: "Which selector targets all paragraph elements inside a div?",
+    options: [
+      "The selector div p targets all p elements that are descendants of a div.",
+      "The selector p div selects all divs inside a paragraph element.",
+      "The selector div > p targets paragraphs that follow a div.",
+      "The selector div.p selects divs that contain paragraphs."
+    ],
+    correct: "The selector div p targets all p elements that are descendants of a div."
+},{
+    id: 19,
+    question: "What is the role of the <label> element in an HTML form?",
+    options: [
+      "The <label> element groups related form fields under one heading.",
+      "The <label> element connects a text description to a form input for better accessibility.",
+      "The <label> element submits the associated input value to the server.",
+      "The <label> element stores placeholder values for text inputs."
+    ],
+    correct: "The <label> element connects a text description to a form input for better accessibility."
+  },
+  {
+    id: 20,
+    question: "Why might a developer use a reset or normalize CSS file?",
+    options: [
+      "To ensure that every browser applies its default styling for a consistent look.",
+      "To add additional built-in animations across all browsers.",
+      "To standardize how HTML elements are styled across different browsers.",
+      "To overwrite semantic HTML structures and re-style them manually."
+    ],
+    correct: "To standardize how HTML elements are styled across different browsers."
+  }
+];
+
+
 
 // // HTML
-const quizQuestions = [
+const quizQuestions60 = [
     {
       id: 1,
       question: "What does HTML stand for?",
