@@ -185,7 +185,7 @@ function startCountDown() {
 // ======================
 
 //// HTML & CSS Questions
-const htmlCssQuestions = [
+const quizQuestions = [
   // ===== HTML Basics =====
   {
     id: 1,
