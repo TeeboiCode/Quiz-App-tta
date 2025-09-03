@@ -184,9 +184,204 @@ function startCountDown() {
 // ======================
 // ======================
 
+//// HTML & CSS Questions
+const htmlCssQuestions = [
+  // ===== HTML Basics =====
+  {
+    id: 1,
+    question: "Which HTML tag is used to define the largest heading?",
+    options: ["<h6>", "<heading>", "<h1>", "<head>"],
+    correct: "<h1>",
+  },
+  {
+    id: 2,
+    question: "Which tag is used to create a hyperlink in HTML?",
+    options: ["<a>", "<link>", "<href>", "<url>"],
+    correct: "<a>",
+  },
+  {
+    id: 3,
+    question: "Which attribute specifies an alternate text for an image?",
+    options: ["title", "alt", "src", "caption"],
+    correct: "alt",
+  },
+  {
+    id: 4,
+    question: "Which tag is used to display a line break?",
+    options: ["<break>", "<br>", "<lb>", "<newline>"],
+    correct: "<br>",
+  },
+  {
+    id: 5,
+    question: "Which tag is used to define a table row?",
+    options: ["<td>", "<tr>", "<th>", "<row>"],
+    correct: "<tr>",
+  },
+  {
+    id: 6,
+    question: "What is the correct DOCTYPE for HTML5?",
+    options: [
+      "<!DOCTYPE html5>",
+      "<!DOCTYPE HTML PUBLIC>",
+      "<!DOCTYPE html>",
+      "<!HTML5>",
+    ],
+    correct: "<!DOCTYPE html>",
+  },
+  {
+    id: 7,
+    question: "Which tag is used to define an unordered list?",
+    options: ["<ol>", "<li>", "<ul>", "<list>"],
+    correct: "<ul>",
+  },
+  {
+    id: 8,
+    question: "Which HTML tag is used for inserting a horizontal line?",
+    options: ["<line>", "<hr>", "<br>", "<hl>"],
+    correct: "<hr>",
+  },
+  {
+    id: 9,
+    question: "Which HTML element is used to define emphasized text?",
+    options: ["<i>", "<em>", "<strong>", "<italic>"],
+    correct: "<em>",
+  },
+  {
+    id: 10,
+    question: "Which attribute specifies the URL of an image?",
+    options: ["src", "href", "link", "alt"],
+    correct: "src",
+  },
+
+  // ===== HTML Forms & Media =====
+  {
+    id: 11,
+    question: "Which input type defines a checkbox?",
+    options: ["radio", "checkbox", "text", "select"],
+    correct: "checkbox",
+  },
+  {
+    id: 12,
+    question: "Which tag is used to define a dropdown list?",
+    options: ["<list>", "<dropdown>", "<select>", "<option>"],
+    correct: "<select>",
+  },
+  {
+    id: 13,
+    question: "Which HTML tag is used to play video files?",
+    options: ["<video>", "<media>", "<movie>", "<source>"],
+    correct: "<video>",
+  },
+  {
+    id: 14,
+    question: "Which HTML element is used to input multiple lines of text?",
+    options: ["<textbox>", "<input>", "<textarea>", "<multitext>"],
+    correct: "<textarea>",
+  },
+  {
+    id: 15,
+    question: "Which tag is used to add captions to a table?",
+    options: ["<caption>", "<title>", "<th>", "<label>"],
+    correct: "<caption>",
+  },
+
+  // ===== CSS Basics =====
+  {
+    id: 16,
+    question: "Which property is used to change the text color in CSS?",
+    options: ["background-color", "color", "font-color", "text-color"],
+    correct: "color",
+  },
+  {
+    id: 17,
+    question: "Which CSS property controls the text size?",
+    options: ["font-size", "text-style", "size", "text-size"],
+    correct: "font-size",
+  },
+  {
+    id: 18,
+    question: "Which property is used to change the background color?",
+    options: ["background", "bgcolor", "background-color", "color"],
+    correct: "background-color",
+  },
+  {
+    id: 19,
+    question: "Which property is used to set the font in CSS?",
+    options: ["font", "text", "font-family", "typeface"],
+    correct: "font-family",
+  },
+  {
+    id: 20,
+    question: "Which CSS unit is relative to the parent element’s font size?",
+    options: ["px", "em", "rem", "%"],
+    correct: "em",
+  },
+  {
+    id: 21,
+    question: "Which CSS property makes text bold?",
+    options: ["bold", "font-style", "font-weight", "text-bold"],
+    correct: "font-weight",
+  },
+  {
+    id: 22,
+    question: "Which selector selects all `<p>` elements in CSS?",
+    options: ["p{}", ".p{}", "#p{}", "para{}"],
+    correct: "p{}",
+  },
+  {
+    id: 23,
+    question: "Which CSS property is used to add space inside an element?",
+    options: ["margin", "padding", "border", "spacing"],
+    correct: "padding",
+  },
+  {
+    id: 24,
+    question: "Which CSS property is used to underline text?",
+    options: ["text-decoration", "font-style", "line-height", "underline"],
+    correct: "text-decoration",
+  },
+  {
+    id: 25,
+    question: "Which property sets the space between lines of text?",
+    options: ["line-spacing", "line-height", "spacing", "height"],
+    correct: "line-height",
+  },
+
+  // ===== CSS Advanced & Layout =====
+  {
+    id: 26,
+    question: "Which CSS layout module uses rows and columns?",
+    options: ["Flexbox", "Grid", "Float", "Inline-block"],
+    correct: "Grid",
+  },
+  {
+    id: 27,
+    question: "Which CSS property controls the element’s position?",
+    options: ["display", "float", "position", "align"],
+    correct: "position",
+  },
+  {
+    id: 28,
+    question: "Which value of `position` makes an element fixed to the viewport?",
+    options: ["absolute", "relative", "fixed", "sticky"],
+    correct: "fixed",
+  },
+  {
+    id: 29,
+    question: "Which Flexbox property controls alignment along the main axis?",
+    options: ["align-items", "justify-content", "flex-direction", "align-content"],
+    correct: "justify-content",
+  },
+  {
+    id: 30,
+    question: "Which CSS property is used to create rounded corners?",
+    options: ["corner-radius", "border-style", "border-radius", "round"],
+    correct: "border-radius",
+  },
+]
 
 // new
-const quizQuestions = [
+const quizQuestionsNew = [
   {
     id: 1,
     question: "What is the purpose of the <head> element in an HTML document?",
